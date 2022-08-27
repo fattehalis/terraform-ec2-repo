@@ -5,13 +5,8 @@ pipeline {
                 when {
                     branch 'main' 
                 }
-                environment {
-                    scannerHome = tool 'sonar'
-                }
-                steps {
-                    withSonarQubeEnv('sonar') {
-                        sh '${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=sonar -Dsonar.sources=. -Dsonar.host.url=http://54.197.145.2:9000'
-                }
+              steps {
+                    sh '/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar/bin/sonar-scanner -Dsonar.projectKey=sonar -Dsonar.sources=. -Dsonar.host.url=http://54.197.145.2:9000'
             }
         }
         

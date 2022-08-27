@@ -9,7 +9,7 @@ pipeline {
                     scannerHome = tool'sonar'
                 }
                 steps {
-                    withSOnarQubeEnv('sonar') {
+                    withSonarQubeEnv('sonar') {
                         sh '${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=sonar -Dsonar.sources=. -Dsonar.host.url=http://54.197.145.2:9000'
                 }
             }

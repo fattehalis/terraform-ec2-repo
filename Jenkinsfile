@@ -6,7 +6,7 @@ pipeline {
                     branch 'main' 
                 }
                 environment {
-                    scannerHome = tool'sonar'
+                    scannerHome = tool 'sonar'
                 }
                 steps {
                     withSonarQubeEnv('sonar') {
